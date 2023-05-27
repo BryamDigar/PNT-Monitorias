@@ -1,2 +1,2 @@
 # PNT-Monitorias
-Codigo backend en Java para plataforma de creación y reserva de monitorias
+Codigo backend y frontend para plataforma de creación y reserva de monitorias
