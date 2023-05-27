@@ -18,12 +18,11 @@ public class MonitorDTO {
 
     @NotNull(message = "El semestre completo es necesario")
     @Min(1)
-    @Max(10)
+    @Max(12)
     private int semestre;
 
     @NotNull(message = "La facultad completa es necesaria")
-    @NotEmpty(message = "La facultad completa es necesaria")
-    private String facultad;
+    private facultadEnum facultad;
 
     @NotNull(message = "Las habilidades completas son necesarias")
     @NotEmpty(message = "Las habilidades completas son necesarias")
