@@ -1,14 +1,20 @@
-export const FormularioMonitor = ({agregar, nombre, semestre, facultad, habilidades, setNombre , setSemestre, setFacultad, setHabilidades}) => {
+export const FormularioMonitor = ({agregar,id, nombre, semestre, facultad, habilidades, setId , setNombre , setSemestre, setFacultad, setHabilidades}) => {
+    const botonEnviar = document.getElementById("botonEnviar");
+    
     const guardarMonitor = (event) => {
         event.preventDefault();
 
         let monitor = {
+            id: id,
             nombre: nombre,
             semestre: semestre,
             facultad: facultad,
             habilidades:habilidades
         }
         agregar(monitor)
+    }
+    const saludar = () =>{
+        console.log("Hola")
     }
 
     return (
@@ -20,7 +26,7 @@ export const FormularioMonitor = ({agregar, nombre, semestre, facultad, habilida
             </div>
             <div>
                 <label htmlFor="semestre" className="labelform">Escoge tu semestre:</label>
-                <select name="semestre" id="semestre" value={semestre} className="form-select" aria-label="Default select example" form-select-border-width="10px"  onChange={(event) =>  {setSemestre(event.target.value)}} style={{ width: "500px" }}>
+                <select name="semestre" id="semestre" value={semestre} className="form-select" aria-label="Default select example" form-select-border-width="10px"  onChange={(event) =>  setSemestre(event.target.value)} style={{ width: "500px" }}>
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -38,7 +44,7 @@ export const FormularioMonitor = ({agregar, nombre, semestre, facultad, habilida
             </div>
             <div>
                 <label htmlFor="facultad" className="labelform">Escoge tu Facultad:</label>
-                <select name="facultad" id="facultad" value={facultad} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultad(event.target.value)}} style={{ width: "500px" }}>
+                <select name="facultad" id="facultad" value={facultad} className="form-select" aria-label="Default select example" onChange={(event) =>  setFacultad(event.target.value)} style={{ width: "500px" }}>
                     <option value=""></option>
                     <option value="COMUNICACION">COMUNICACION</option>
                     <option value="DERECHO">DERECHO</option>
@@ -49,9 +55,9 @@ export const FormularioMonitor = ({agregar, nombre, semestre, facultad, habilida
             </div>
             <div className="form-group">
                 <label htmlFor="habilidades" className="label">habilidades</label>
-                <input type="text" className="form-control" id="habilidades" placeholder="habilidades" value={habilidades} onChange={(event) => setHabilidades(event.target.value)} />
+                <input type="text" className="form-control" id="habilidades" placeholder="*Matematicas, Artes, Negocios...* " value={habilidades} onChange={(event) => setHabilidades(event.target.value)} />
             </div>
-            <button type="submit" className="btn btn-primary">Registrar</button>
+            <button id="botonEnviar" type="submit" className="btn btn-primary">Registrar</button>
         </form>
         </> 
     )
