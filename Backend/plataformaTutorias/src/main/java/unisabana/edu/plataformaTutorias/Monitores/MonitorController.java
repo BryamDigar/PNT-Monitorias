@@ -2,6 +2,8 @@ package unisabana.edu.plataformaTutorias.Monitores;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import unisabana.edu.plataformaTutorias.Respuesta;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,10 +23,10 @@ public class MonitorController {
     }
 
     @PostMapping(path = "/crear")
-    public String crearMonitor(@RequestBody @Valid MonitorDTO monitor){
+    public Respuesta crearMonitor(@RequestBody @Valid MonitorDTO monitor){
         monitor.setId(filtrarID());
         monitorList.add(monitor);
-        return "Estudiante ingresado correctamente";
+        return new Respuesta("Estudiante ingresado correctamente");
     }
 
     @GetMapping(path = "/todos")
