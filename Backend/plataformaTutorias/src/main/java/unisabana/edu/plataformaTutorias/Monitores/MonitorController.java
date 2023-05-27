@@ -26,7 +26,7 @@ public class MonitorController {
     public Respuesta crearMonitor(@RequestBody @Valid MonitorDTO monitor){
         monitor.setId(filtrarID());
         monitorList.add(monitor);
-        return new Respuesta("Estudiante ingresado correctamente");
+        return new Respuesta("Monitor ingresado correctamente");
     }
 
     @GetMapping(path = "/todos")
@@ -46,7 +46,7 @@ public class MonitorController {
     }
 
     @DeleteMapping(path = "/eliminar/{id}")
-    public String eliminarMonitor(@PathVariable(name = "id") Integer id){
+    public Respuesta eliminarMonitor(@PathVariable(name = "id") Integer id){
         int index = 0;
         for(MonitorDTO monitorElim : monitorList){
             if(monitorElim.getId() == id){
@@ -55,11 +55,11 @@ public class MonitorController {
             }
             index++;
         }
-        return "Estudiante eliminado";
+        return new Respuesta("Monitor eliminado");
     }
 
     @PutMapping(path = "/actualizar/{id}")
-    public String actualizarMonitor(@PathVariable Integer id,@RequestBody @Valid MonitorDTO actualizarMonitor){
+    public Respuesta actualizarMonitor(@PathVariable Integer id,@RequestBody @Valid MonitorDTO actualizarMonitor){
         for (MonitorDTO monitor : monitorList){
             if (monitor.getId() == id){
                 actualizarMonitor.setId(id);
@@ -68,7 +68,7 @@ public class MonitorController {
                 break;
             }
         }
-        return "Estudiante actualizado correctamente";
+        return new Respuesta("Monitor actualizado correctamente");
     }
 
 
