@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState , useEffect } from "react"
 import {  FormularioMonitor } from "../ComponentesMonitorias/FormularioMonitor";
 import { TablaMonitor } from "../ComponentesMonitorias/TablaMonitor";
+import { postMonitor } from "../ComponentesMonitorias/PeticionesMonitor/postMonitor";
+import { getMonitores } from "../ComponentesMonitorias/PeticionesMonitor/getMonitores";
+import { deleteMonitor } from "../ComponentesMonitorias/PeticionesMonitor/deleteMonitor";
 
 export const Monitorias = () => {
     const [monitores, setMonitores] = useState([]);
@@ -11,15 +14,29 @@ export const Monitorias = () => {
 
     const agregarMonitor = (monitor) => {
         setMonitores([...monitores,monitor]);
+        postMonitor(monitor)
+
+        setNombre("");
+        setSemestre("");
+        setFacultad("");
+        setHabilidades("")
     }
 
     const borrarMonitor = (id) => {
-        let opcion = window.confirm("¿Realmente desea borrar al Monitor?");
+        let opcion = window.confirm("¿Realmente desea borrar al estudiante?")
         if(opcion){
-            let nuevaLista = monitores.filter(Monitores => monitores.id !== id);
-            setMonitores(nuevaLista);
+            deleteMonitor(id);
         }
     }
+
+    const cargueMonitores = async () => {
+        const datos = await getMonitores();
+        setMonitores(datos);
+    }
+    useEffect(() =>{
+        cargueMonitores();
+    })
+    
     return (
         <>
         <h1>Crear Monitor</h1>

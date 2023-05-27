@@ -8,7 +8,6 @@ export const FormularioMonitor = ({agregar, nombre, semestre, facultad, habilida
             facultad: facultad,
             habilidades:habilidades
         }
-        console.log(monitor)
         agregar(monitor)
     }
 
@@ -33,17 +32,19 @@ export const FormularioMonitor = ({agregar, nombre, semestre, facultad, habilida
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
                 </select>
             </div>
             <div>
                 <label htmlFor="facultad" className="labelform">Escoge tu Facultad:</label>
                 <select name="facultad" id="facultad" value={facultad} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultad(event.target.value)}} style={{ width: "500px" }}>
                     <option value=""></option>
-                    <option value="Comunicacion">Comunicacion</option>
-                    <option value="Derecho">Derecho</option>
-                    <option value="Educacion">Educacion</option>
-                    <option value="Ingenieria">Ingenieria</option>
-                    <option value="Medicina">Medicina</option>
+                    <option value="COMUNICACION">COMUNICACION</option>
+                    <option value="DERECHO">DERECHO</option>
+                    <option value="EDUCACION">EDUCACION</option>
+                    <option value="INGENIERIA">INGENIERIA</option>
+                    <option value="MEDICINA">MEDICINA</option>
                 </select>
             </div>
             <div className="form-group">
