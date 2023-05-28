@@ -3,7 +3,6 @@ package unisabana.edu.plataformaTutorias.Monitorias;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import unisabana.edu.plataformaTutorias.Monitores.MonitorController;
-import unisabana.edu.plataformaTutorias.Monitores.MonitorDTO;
 import unisabana.edu.plataformaTutorias.Respuesta;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +16,11 @@ public class MonitoriasController {
 
     public MonitoriasController(){
         this.monitoriasList = new ArrayList<>();
-        monitoriasList.add(new MonitoriasDTO(500000,100000,MateriasEnum.CALCULO,"2023-06-19","14:00"));
-        monitoriasList.add(new MonitoriasDTO(500001,100003, MateriasEnum.JUICIO,"2023-07-01","9:00"));
-        monitoriasList.add(new MonitoriasDTO(500002,100000,MateriasEnum.PROGRAMACION,"2023-06-20","10:00"));
-        monitoriasList.add(new MonitoriasDTO(500003,100002,MateriasEnum.FOTOGRAFIA,"2023-06-08","16:00"));
-        monitoriasList.add(new MonitoriasDTO(500004,100005,MateriasEnum.CALCULO,"2023-08-19","13:00"));
+        monitoriasList.add(new MonitoriasDTO(500005,100000,MateriasEnum.CALCULO,"2023-06-19","14:00"));
+        monitoriasList.add(new MonitoriasDTO(500006,100003, MateriasEnum.JUICIO,"2023-07-01","9:00"));
+        monitoriasList.add(new MonitoriasDTO(500007,100000,MateriasEnum.PROGRAMACION,"2023-06-20","10:00"));
+        monitoriasList.add(new MonitoriasDTO(500008,100002,MateriasEnum.FOTOGRAFIA,"2023-06-08","16:00"));
+        monitoriasList.add(new MonitoriasDTO(500009,100005,MateriasEnum.CALCULO,"2023-08-19","13:00"));
     }
 
     @PostMapping(path = "/crear")
@@ -97,6 +96,17 @@ public class MonitoriasController {
     public boolean verificarExistenciaMonitor(int id){
         MonitorController monitor = new MonitorController();
         return monitor.verificarMonitor(id);
+    }
+
+    public boolean verificarMonitoria(int idMonitoria){
+        boolean existencia = false;
+        for (MonitoriasDTO monitoria : monitoriasList){
+            if(monitoria.getIdMonitoria() == idMonitoria){
+                existencia = true;
+                break;
+            }
+        }
+        return existencia;
     }
 
 }

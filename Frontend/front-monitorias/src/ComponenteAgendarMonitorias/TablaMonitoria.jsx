@@ -21,9 +21,10 @@ export const TablaMonitoria = ({ listaMonitorias, borrarMonitoria, monitoriaStat
                             <td>{monitoria.materia}</td>
                             <td>{monitoria.fecha}</td>
                             <td>{monitoria.hora}</td>
-                            <td> 
+                            <td>
+                            <button className="btn btn-outline-danger" >Reservar</button>
                             <button className="btn btn-outline-info me-2" onClick={()=> monitoriaStatus(monitoria)}>Editar</button> 
-                            <button className="btn btn-outline-danger" onClick={()=>borrarMonitoria(monitoria.id)}>Reservar</button>
+                            <button className="btn btn-outline-danger" onClick={()=>borrarMonitoria(monitoria.id)}>Eliminar</button>
                             </td>
                         </tr>)
                     }
