@@ -3,7 +3,6 @@ package unisabana.edu.plataformaTutorias.Monitores;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import unisabana.edu.plataformaTutorias.Respuesta;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,5 +81,16 @@ public class MonitorController {
             }
         }
         return id + 1;
+    }
+
+    public boolean verificarMonitor(int idMonitor){
+        boolean existencia = false;
+        for (MonitorDTO monitor : monitorList){
+            if(monitor.getId() == idMonitor){
+                existencia = true;
+                break;
+            }
+        }
+        return existencia;
     }
 }
