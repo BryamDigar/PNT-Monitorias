@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './pages/Layout';
-import { Monitorias } from './pages/Monitorias';
+import { Monitores } from './pages/Monitores';
 import { Reservas } from './pages/Reservas';
-import { Menu } from './pages/Menu';
+import { Inicio } from './pages/Inicio';
 import { Default } from './pages/Default';
+import { Monitorias } from './pages/Monitorias';
 export const MonitoriasApp = () => {
 
     return (
@@ -11,9 +12,10 @@ export const MonitoriasApp = () => {
             <h1>Routes</h1>
             <Routes>
             <Route path="/" element={<Layout />}>
-                <Route path='/' element={<Menu/>}/>
-                <Route path='monitorias' element={<Monitorias/>}/>
+                <Route path='/' element={<Inicio/>}/>
+                <Route path='monitores' element={<Monitores/>}/>
                 <Route path='Reservas' element={<Reservas/>}/>
+                <Route path='Monitorias' element={<Monitorias/>}/>
                 <Route path='*' element={<Default/>}/>
                 </Route>
             </Routes>

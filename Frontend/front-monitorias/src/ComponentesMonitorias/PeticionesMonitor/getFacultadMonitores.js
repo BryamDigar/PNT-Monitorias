@@ -8,7 +8,7 @@ export const getFacultadMonitores = async(facultad) => {
         nombre: monitor.nombre,
         semestre: monitor.semestre,
         facultad: monitor.facultad,
-        programa: monitor.programa
+        habilidades: monitor.habilidades
     }))
     return monitoresList;
 }

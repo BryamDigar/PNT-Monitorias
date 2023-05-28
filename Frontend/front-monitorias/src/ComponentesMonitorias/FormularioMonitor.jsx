@@ -1,5 +1,4 @@
 export const FormularioMonitor = ({agregar,id, nombre, semestre, facultad, habilidades, setId , setNombre , setSemestre, setFacultad, setHabilidades}) => {
-    const botonEnviar = document.getElementById("botonEnviar");
     
     const guardarMonitor = (event) => {
         event.preventDefault();
@@ -12,9 +11,6 @@ export const FormularioMonitor = ({agregar,id, nombre, semestre, facultad, habil
             habilidades:habilidades
         }
         agregar(monitor)
-    }
-    const saludar = () =>{
-        console.log("Hola")
     }
 
     return (

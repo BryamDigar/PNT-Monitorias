@@ -5,7 +5,10 @@ export const Layout = () =>{
     <nav>
         <ul>
           <li>
-            <Link to="/">Menu</Link>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/Monitores">Monitores</Link>
           </li>
           <li>
             <Link to="/Monitorias">Monitorias</Link>

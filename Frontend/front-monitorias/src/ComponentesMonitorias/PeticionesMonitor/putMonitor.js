@@ -13,4 +13,5 @@ export const putMonitor = async(monitor) => {
         })
     });
     const data = await resp.json();
+    alert(data.data)
 }

@@ -1,5 +1,5 @@
-export const deleteMonitor = async(id) => {
-    const url = `http://localhost:8080/monitores/eliminar/ ${id}`;
+export const deleteMonitoria = async(idMonitoria) => {
+    const url = `http://localhost:8080/monitorias/eliminar/ ${idMonitoria}`;
     const resp = await fetch(url, {
         method: 'DELETE',
         headers: {
