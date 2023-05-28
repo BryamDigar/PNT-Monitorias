@@ -6,6 +6,7 @@ import { postMonitoria } from "../ComponenteAgendarMonitorias/PeticionesMonitori
 import { putMonitoria } from "../ComponenteAgendarMonitorias/PeticionesMonitorias/putMonitoria"
 import { FormularioMonitoria } from "../ComponenteAgendarMonitorias/FormularioMonitoria"
 import { TablaMonitoria } from "../ComponenteAgendarMonitorias/TablaMonitoria"
+import { postReserva } from "../ComponenteAgendarMonitorias/PeticionesMonitorias/postReserva"
 
 export const Monitorias = () => {
 
@@ -59,6 +60,11 @@ export const Monitorias = () => {
         if(opcion){
             deleteMonitoria(idMonitoria);
         }
+    }
+
+    const reservarMonitoria = (reserva) => {
+        postReserva(reserva);
+        deleteMonitoria(reserva.idMonitoria);
     }
 
     const monitoriaStatus = (monitoria) => {
@@ -116,7 +122,7 @@ export const Monitorias = () => {
             </div>
             <br></br>
         </form>
-        <TablaMonitoria listaMonitorias={monitorias} borrarMonitoria={borrarMonitoria} monitoriaStatus={monitoriaStatus}/>
+        <TablaMonitoria listaMonitorias={monitorias} borrarMonitoria={borrarMonitoria} monitoriaStatus={monitoriaStatus} reservarMonitoria={reservarMonitoria}/>
         </>
     )
 }

@@ -18,9 +18,9 @@ public class ReservasController {
         this.reservasList = new ArrayList<>();
         reservasList.add(new ReservasDTO(500000,100000,MateriasEnum.CALCULO,"2023-06-19","14:00"));
         reservasList.add(new ReservasDTO(500001,100005,MateriasEnum.PROGRAMACION,"2023-07-02","8:30"));
-        reservasList.add(new ReservasDTO(500002,100000,MateriasEnum.CALCULO,"2023-06-19","14:00"));
+        reservasList.add(new ReservasDTO(500002,100000,MateriasEnum.FOTOGRAFIA,"2023-06-19","14:00"));
         reservasList.add(new ReservasDTO(500003,100000,MateriasEnum.CALCULO,"2023-06-19","14:00"));
-        reservasList.add(new ReservasDTO(500004,100000,MateriasEnum.CALCULO,"2023-06-19","14:00"));
+        reservasList.add(new ReservasDTO(500004,100000,MateriasEnum.APREDIZAJE,"2023-06-19","14:00"));
     }
 
     @PostMapping(path = "/crear")

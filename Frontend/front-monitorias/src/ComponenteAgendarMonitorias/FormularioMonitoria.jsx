@@ -10,7 +10,6 @@ export const FormularioMonitoria = ({ agregarMonitoria, idMonitoria, idMonitor, 
             fecha: fecha,
             hora: hora
         }
-
         agregarMonitoria(monitoria)
     }
     return(
