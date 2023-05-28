@@ -27,8 +27,7 @@ export const Monitores = () => {
             setNombre("");
             setSemestre("");
             setFacultad("");
-            setHabilidades("")
-            setEditarStatus("");
+            setHabilidades("");
             setForcuMonitor(null);
         }else{
             setMonitores([...monitores,monitor]);
@@ -38,9 +37,10 @@ export const Monitores = () => {
             setNombre("");
             setSemestre("");
             setFacultad("");
-            setHabilidades("")
+            setHabilidades("");
             setForcuMonitor(null);
-        }
+        }  
+        setEditarStatus("");
     }
     
     const buscarMonitorFacultad = async (event) => {

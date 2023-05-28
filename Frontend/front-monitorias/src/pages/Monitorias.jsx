@@ -40,6 +40,7 @@ export const Monitorias = () => {
             setHora("");
             setForcuMonitoria(null);
         }
+        setEditarMonitoriaStatus("");
     }
 
     const buscarMonitoriaMateria = async (event) => {

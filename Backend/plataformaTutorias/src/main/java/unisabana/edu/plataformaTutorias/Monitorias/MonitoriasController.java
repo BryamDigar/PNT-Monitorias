@@ -99,5 +99,4 @@ public class MonitoriasController {
         return monitor.verificarMonitor(id);
     }
 
-
 }

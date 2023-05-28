@@ -2,6 +2,7 @@ package unisabana.edu.plataformaTutorias.Monitores;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import unisabana.edu.plataformaTutorias.Monitorias.MonitoriasController;
 import unisabana.edu.plataformaTutorias.Respuesta;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @RequestMapping(path = "/monitores")
 public class MonitorController {
 
-    List<MonitorDTO> monitorList;
+    public List<MonitorDTO> monitorList;
 
     public MonitorController() {
         this.monitorList = new ArrayList<>();
@@ -93,4 +94,5 @@ public class MonitorController {
         }
         return existencia;
     }
+
 }
