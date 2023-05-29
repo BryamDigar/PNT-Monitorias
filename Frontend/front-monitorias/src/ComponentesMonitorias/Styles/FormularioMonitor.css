@@ -1,0 +1,12 @@
+.inputs-form {
+    padding: 40px 0;
+  }
+  
+.inputs-form input {
+  margin-bottom: 10px;
+}
+
+.BotonEnviar{
+  display: flex;
+  justify-content: center;
+}

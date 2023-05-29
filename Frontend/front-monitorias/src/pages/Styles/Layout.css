@@ -1,0 +1,16 @@
+.navbar{
+    background-color: #0741ad;
+    
+}
+.navbar-brand{
+    margin-left: 10px;
+}
+.nav-link{
+    font-size: 20px;
+    color: white;
+}
+.enviarGitHub{
+    list-style-type: none;
+    text-align: center;
+    margin-right: 30px;
+}

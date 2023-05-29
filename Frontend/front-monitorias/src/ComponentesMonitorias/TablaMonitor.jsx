@@ -1,4 +1,4 @@
-
+import "../Tabla.css"
 
 export const TablaMonitor = ({listaMonitores, borrarMonitor, monitorStatus}) => {
 
@@ -25,8 +25,8 @@ export const TablaMonitor = ({listaMonitores, borrarMonitor, monitorStatus}) => 
                             <td>{monitor.facultad}</td>
                             <td>{monitor.habilidades}</td>
                             <td> 
-                            <button className="btn btn-outline-info me-2" onClick={()=> monitorStatus(monitor)}>Editar</button> 
-                            <button className="btn btn-outline-danger" onClick={()=>borrarMonitor(monitor.id)}>Eliminar</button>
+                            <button className="btn btn-primary" onClick={()=> monitorStatus(monitor)}>Editar</button> 
+                            <button className="btn btn-danger" onClick={()=>borrarMonitor(monitor.id)}>Eliminar</button>
                             </td>
                         </tr>)
                     }

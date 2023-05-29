@@ -6,6 +6,8 @@ import { getMonitores } from "../ComponentesMonitorias/PeticionesMonitor/getMoni
 import { deleteMonitor } from "../ComponentesMonitorias/PeticionesMonitor/deleteMonitor";
 import { getFacultadMonitores } from "../ComponentesMonitorias/PeticionesMonitor/getFacultadMonitores";
 import { putMonitor } from "../ComponentesMonitorias/PeticionesMonitor/putMonitor";
+import "./Styles/Pages.css"
+import { BiSearchAlt } from 'react-icons/bi';
 
 export const Monitores = () => {
     const [monitores, setMonitores] = useState([]);
@@ -90,12 +92,12 @@ export const Monitores = () => {
     
     return (
         <>
-        <h1>Crear Monitor</h1>
+        <h2>Crear Monitor</h2>
         <FormularioMonitor agregar={(monitor) => {agregarMonitor(monitor)}} id={id} nombre={nombre} semestre={semestre} facultad={facultad} habilidades={habilidades} setId={setId} setNombre={(event)=>setNombre(event)} setSemestre={(event)=>setSemestre(event)} setFacultad={(event)=>setFacultad(event)} setHabilidades={(event)=>setHabilidades(event)}/>
+        <br />
         <form onSubmit={buscarMonitorFacultad}>
-            <div>
-                <label htmlFor="facultad" className="labelform">Escoge tu Facultad:</label>
-                <select name="facultadBuscar" id="facultadBuscar" value={facultadBuscar} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultadBuscar(event.target.value)}} style={{ width: "500px" }}>
+            <div className="Buscar d-flex">
+                <select name="facultadBuscar" id="facultadBuscar" value={facultadBuscar} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultadBuscar(event.target.value)}} style={{ width: "200px" }}>
                     <option value=""></option>
                     <option value="COMUNICACION">COMUNICACION</option>
                     <option value="DERECHO">DERECHO</option>
@@ -103,10 +105,11 @@ export const Monitores = () => {
                     <option value="INGENIERIA">INGENIERIA</option>
                     <option value="MEDICINA">MEDICINA</option>
                 </select>
-                <button type="submit" className="btn btn-primary">Buscar</button>
+                <button type="submit" className="btn btn-primary"><BiSearchAlt className="mr-2" /></button>
             </div>
-                <br></br>
+            <br />
         </form>
+        <h2>Tabla de monitores</h2>
         <TablaMonitor listaMonitores={monitores} borrarMonitor={borrarMonitor}  monitorStatus={monitorStatus}/>
         </>
         )

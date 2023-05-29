@@ -1,3 +1,5 @@
+import "../Tabla.css"
+
 export const  TablaReservas = ({reservas, cancelar, calificar}) => {
     return (
         <>
@@ -21,8 +23,8 @@ export const  TablaReservas = ({reservas, cancelar, calificar}) => {
                         <td>{reserva.fecha}</td>
                         <td>{reserva.hora}</td>
                         <td>
-                        <button className="btn btn-outline-info me-2" onClick={() => calificar(reserva.idMonitoria)}>Calificar</button> 
-                        <button className="btn btn-outline-danger" onClick={() => cancelar(reserva.idMonitoria)}>Cancelar</button>
+                        <button className="btn btn-success" onClick={() => calificar(reserva.idMonitoria)}>Calificar</button> 
+                        <button className="btn btn-danger" onClick={() => cancelar(reserva.idMonitoria)}>Cancelar</button>
                     </td>
                 </tr>)
                 }

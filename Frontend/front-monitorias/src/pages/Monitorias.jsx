@@ -7,6 +7,8 @@ import { putMonitoria } from "../ComponenteAgendarMonitorias/PeticionesMonitoria
 import { FormularioMonitoria } from "../ComponenteAgendarMonitorias/FormularioMonitoria"
 import { TablaMonitoria } from "../ComponenteAgendarMonitorias/TablaMonitoria"
 import { postReserva } from "../ComponenteAgendarMonitorias/PeticionesMonitorias/postReserva"
+import "./Styles/Pages.css"
+import { BiSearchAlt } from 'react-icons/bi';
 
 export const Monitorias = () => {
 
@@ -95,12 +97,12 @@ export const Monitorias = () => {
 
     return (
         <>
-        <h1>Crear Monitoria</h1>
+        <h2>Crear Monitoria</h2>
         <FormularioMonitoria agregarMonitoria={(monitoria) => {agregarMonitoria(monitoria)}} idMonitoria={idMonitoria} idMonitor={idMonitor} materia={materia} fecha={fecha} hora={hora}setIdMonitoria={setIdMonitoria} setIdMonitor={(event)=>setIdMonitor(event)} setMateria={(event)=>setMateria(event)} setFecha={(event)=>setFecha(event)} setHora={(event)=>setHora(event)}/>
+        <br />
         <form onSubmit={buscarMonitoriaMateria}>
-            <div>
-            <label htmlFor="materiaBuscar" className="label">Escoge la materia a buscar:</label>
-                <select name="materiaBuscar" id="materiaBuscar" value={materiaBuscar} className="form-select" aria-label="Default select example" form-select-border-width="10px"  onChange={(event) =>  setMateriaBuscar(event.target.value)} style={{ width: "500px" }}>
+            <div className="Buscar d-flex">
+                <select name="materiaBuscar" id="materiaBuscar" value={materiaBuscar} className="form-select" aria-label="Default select example" form-select-border-width="10px"  onChange={(event) =>  setMateriaBuscar(event.target.value)} style={{ width: "200px" }}>
                     <option value=""></option>
                     <option value="PROGRAMACION">PROGRAMACION</option>
                     <option value="CALCULO">CALCULO</option>
@@ -118,10 +120,11 @@ export const Monitorias = () => {
                     <option value="DIDACTICA">DIDACTICA</option>
                     <option value="PEDAGOGIA">PEDAGOGIA</option>
                 </select>
-                <button type="submit" className="btn btn-primary">Buscar</button>
+                <button type="submit" className="btn btn-primary"><BiSearchAlt className="mr-2" /></button>
             </div>
             <br></br>
         </form>
+        <h2>Tabla de monitorias</h2>
         <TablaMonitoria listaMonitorias={monitorias} borrarMonitoria={borrarMonitoria} monitoriaStatus={monitoriaStatus} reservarMonitoria={reservarMonitoria}/>
         </>
     )

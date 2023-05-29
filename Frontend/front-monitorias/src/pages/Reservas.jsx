@@ -5,6 +5,8 @@ import { deleteCalificarReserva } from "../ComponentesReservas/PeticionesReserva
 import { getIdmonitoriaReserva } from "../ComponentesReservas/PeticionesReservas/getIdmonitoriaReserva"
 import { TablaReservas } from "../ComponentesReservas/TablaReservas"
 import { CuadroCalificacion } from "../ComponentesReservas/CuadroCalificacion"
+import "./Styles/Pages.css"
+import { BiSearchAlt } from 'react-icons/bi';
 
 export const Reservas = () => {
     
@@ -74,11 +76,11 @@ export const Reservas = () => {
     })
     return (
         <>
+        <h2>Reservas</h2>
         <form onSubmit={buscarReservaIdMonitoria}>
-            <div>
-                <label htmlFor="idMonitoria" className="labelform">Digite el ID de la monitoria (Si quiere ver todas las reservas, borre la busqueda):</label>
-                <input type="text" className="form-control" id="buscarId" placeholder="buscarId" value={buscarId} onChange={(event) => setBuscarId(event.target.value)} />
-                <button type="submit" className="btn btn-primary">Buscar</button>
+            <div className="Buscar d-flex">
+                <input type="text" className="form-control" id="buscarId" placeholder="buscarId" value={buscarId} onChange={(event) => setBuscarId(event.target.value)} style={{ width: "200px" }}/>
+                <button type="submit" className="btn btn-primary"><BiSearchAlt className="mr-2" /></button>
             </div>
                 <br></br>
         </form>

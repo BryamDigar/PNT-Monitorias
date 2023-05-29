@@ -15,11 +15,11 @@ public class MonitorController {
 
     public MonitorController() {
         this.monitorList = new ArrayList<>();
-        monitorList.add(new MonitorDTO(100000,"Daniel", 3, facultadEnum.INGENIERIA,"Informatica"));
-        monitorList.add(new MonitorDTO( 100002,"Samuel", 5, facultadEnum.COMUNICACION,"Comunicacion"));
-        monitorList.add(new MonitorDTO( 100003,"Andrea", 4, facultadEnum.DERECHO, "EICEA"));
-        monitorList.add(new MonitorDTO( 100004,"Fulana", 3, facultadEnum.INGENIERIA,"Bioproduccion"));
-        monitorList.add(new MonitorDTO( 100005,"Jaime", 3, facultadEnum.INGENIERIA,"Informatica"));
+        monitorList.add(new MonitorDTO(100000,"Daniel", 3, facultadEnum.INGENIERIA,"Informatica, colaboración y liderazgo, logica"));
+        monitorList.add(new MonitorDTO( 100002,"Samuel", 5, facultadEnum.COMUNICACION,"Comunicacion, iniciativa, redaccion"));
+        monitorList.add(new MonitorDTO( 100003,"Andrea", 4, facultadEnum.DERECHO, "Leyes, educador, pensamiento crítico"));
+        monitorList.add(new MonitorDTO( 100004,"Fulana", 3, facultadEnum.INGENIERIA,"Bioproduccion, integridad,  comunicación efectiva"));
+        monitorList.add(new MonitorDTO( 100005,"Jaime", 3, facultadEnum.INGENIERIA,"Informatica, creatividad, trabajo en equipo"));
     }
 
     @PostMapping(path = "/crear")
