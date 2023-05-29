@@ -44,6 +44,16 @@ public class MonitorController {
         }
         return busqueda;
     }
+    @GetMapping(path = "/buscarid")
+    public List<MonitorDTO> obtenerMonitorPorId(@RequestParam int id){
+        List<MonitorDTO> busqueda = new ArrayList<>();
+        for(MonitorDTO monitor : monitorList){
+            if(monitor.getId() == id){
+                busqueda.add(monitor);
+            }
+        }
+        return busqueda;
+    }
 
     @DeleteMapping(path = "/eliminar/{id}")
     public Respuesta eliminarMonitor(@PathVariable(name = "id") Integer id){

@@ -5,6 +5,7 @@ import { Reservas } from './pages/Reservas';
 import { Inicio } from './pages/Inicio';
 import { Default } from './pages/Default';
 import { Monitorias } from './pages/Monitorias';
+import { InfoMonitor } from './pages/InfoMonitor';
 export const MonitoriasApp = () => {
 
     return (
@@ -16,6 +17,7 @@ export const MonitoriasApp = () => {
                 <Route path='monitores' element={<Monitores/>}/>
                 <Route path='Reservas' element={<Reservas/>}/>
                 <Route path='Monitorias' element={<Monitorias/>}/>
+                <Route path='InfoMonitor' element={<InfoMonitor/>}/>
                 <Route path='*' element={<Default/>}/>
                 </Route>
             </Routes>
