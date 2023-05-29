@@ -1,0 +1,10 @@
+.table thead th {
+    background-color: #0741ad;
+    color: white;
+}
+.table {
+    text-align: center;
+}
+.btn{
+    margin: 2px;
+}

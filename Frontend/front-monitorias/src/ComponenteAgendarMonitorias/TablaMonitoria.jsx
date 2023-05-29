@@ -1,4 +1,5 @@
 import { useNavigate  } from 'react-router-dom';
+import "../Tabla.css"
 
 export const TablaMonitoria = ({ listaMonitorias, borrarMonitoria, monitoriaStatus, reservarMonitoria }) => {
 
@@ -27,15 +28,15 @@ export const TablaMonitoria = ({ listaMonitorias, borrarMonitoria, monitoriaStat
                         <td>{monitoria.idMonitoria}</td>
                         <td>{monitoria.idMonitor}</td>
                         <td>
-                        <button className="btn btn-outline-info me-2" onClick={() => enviarId(monitoria.idMonitor)}>Ver monitor</button> 
+                        <button className="btn btn-secondary" onClick={() => enviarId(monitoria.idMonitor)}>Ver monitor</button> 
                         </td>
                         <td>{monitoria.materia}</td>
                         <td>{monitoria.fecha}</td>
                         <td>{monitoria.hora}</td>
                         <td>
-                        <button className="btn btn-outline-danger" onClick={() => reservarMonitoria(monitoria)}>Reservar</button>
-                        <button className="btn btn-outline-info me-2" onClick={()=> monitoriaStatus(monitoria)}>Editar</button> 
-                        <button className="btn btn-outline-danger" onClick={()=>borrarMonitoria(monitoria.idMonitoria)}>Eliminar</button>
+                        <button className="btn btn-success" onClick={() => reservarMonitoria(monitoria)}>Reservar</button>
+                        <button className="btn btn-primary" onClick={()=> monitoriaStatus(monitoria)}>Editar</button> 
+                        <button className="btn btn-danger" onClick={()=>borrarMonitoria(monitoria.idMonitoria)}>Eliminar</button>
                         </td>
                     </tr>)
                 }

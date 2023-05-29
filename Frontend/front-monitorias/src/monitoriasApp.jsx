@@ -10,7 +10,6 @@ export const MonitoriasApp = () => {
 
     return (
         <div>
-            <h1>Routes</h1>
             <Routes>
             <Route path="/" element={<Layout />}>
                 <Route path='/' element={<Inicio/>}/>

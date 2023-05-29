@@ -1,0 +1,21 @@
+.inicio-tab {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+  }
+  
+  .titulo {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .descripcion {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .imagen-fondo {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+  }
+  

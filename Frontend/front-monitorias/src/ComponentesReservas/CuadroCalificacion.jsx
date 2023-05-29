@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa"
+import "./Styles/CuadroCalificacion.css"
 
 export const CuadroCalificacion = ({isVisible, estrellas, setCalificacionActual, calificacionActual, calificacionDesplazada, colores, enviarCalificacion, cancelarCalificacion}) => {
     return (
@@ -18,8 +19,9 @@ export const CuadroCalificacion = ({isVisible, estrellas, setCalificacionActual,
                         )
                     })}
                 </div>
-                <button className="btn btn-outline-info me-2" onClick={() => enviarCalificacion()} >Enviar calificación</button>
-                <button className="btn btn-outline-danger"  onClick={() => cancelarCalificacion()}>Cancelar</button>
+                <br />
+                <button className="btn btn-success" onClick={() => enviarCalificacion()} >Enviar calificación</button>
+                <button className="btn btn-danger"  onClick={() => cancelarCalificacion()}>Cancelar</button>
             </div>
         </div>}
         </>

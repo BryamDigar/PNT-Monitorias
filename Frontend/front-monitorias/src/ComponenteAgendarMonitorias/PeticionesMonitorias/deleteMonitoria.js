@@ -7,5 +7,4 @@ export const deleteMonitoria = async(idMonitoria) => {
           }
     });
     const data = await resp.json();
-    alert(data.data);
 }

@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "Monitorias",
-        "Reservas"
+        "Reservas",
+        "InfoMonitor"
     ]
 }
